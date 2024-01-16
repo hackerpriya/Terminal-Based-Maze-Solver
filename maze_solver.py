@@ -35,7 +35,8 @@ def print_path(path):
 
 # Path Marking Function
 def mark_path(maze, path):
-    pass
+    for row, col in path:
+        maze[row][col] = Fore.GREEN + '◍'
 
 # Main Function
 def main():
