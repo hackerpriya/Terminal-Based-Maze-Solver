@@ -5,7 +5,17 @@ init(autoreset=True)
 
 # Maze Generation Function
 def generate_maze(n):
-    pass
+    maze = [[random.choice(['◌', '▓']) for _ in range(n)] for _ in range(n)]
+    maze[0][0] = Fore.GREEN + 'S'  # Start
+    maze[n - 1][n - 1] = Fore.BLUE + 'E'  # End
+
+    # Mark a certain percentage of cells as walls
+    num_walls = int(0.25 * n * n)
+    for _ in range(num_walls):
+        row, col = random.randint(0, n - 1), random.randint(0, n - 1)
+        maze[row][col] = Fore.RED + '▓'
+
+    return maze
 
 # Maze Printing Function
 def print_maze(maze):
