@@ -19,7 +19,9 @@ def generate_maze(n):
 
 # Maze Printing Function
 def print_maze(maze):
-    pass
+    for row in maze:
+        print(' '.join(row))
+    print()
 
 # Pathfinding Function (Using BFS)
 def find_path(maze):
