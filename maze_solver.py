@@ -89,11 +89,12 @@ def clear_path(maze):
 def main():
     n = int(input("Enter the size of the maze (n * n): "))
     maze = generate_maze(n)
+    print("Generated Maze:")
 
     while True:
         print_maze(maze)
 
-        option = input("Choose an option:\n1. Print Path\n2. Generate Another Puzzle\n3. Exit\n")
+        option = input("1. Print Path\n2. Generate Another Puzzle\n3. Exit\nEnter you choice (1/2/3):")
 
         if option == '1':
             path = find_path(maze)
