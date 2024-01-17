@@ -80,7 +80,10 @@ def mark_path(maze, path):
 
 # Clearing Path Markings Function
 def clear_path(maze):
-    pass
+    for row in range(len(maze)):
+        for col in range(len(maze[0])):
+            if maze[row][col] == Fore.GREEN + 'X':
+                maze[row][col] = '◌'
 
 # Main Function
 def main():
