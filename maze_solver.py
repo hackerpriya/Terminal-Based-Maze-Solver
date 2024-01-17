@@ -75,7 +75,8 @@ def print_path(path, maze):
 
 # Path Marking Function
 def mark_path(maze, path):
-    pass
+    for row, col in path:
+        maze[row][col] = Fore.GREEN + 'X'
 
 # Clearing Path Markings Function
 def clear_path(maze):
