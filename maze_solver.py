@@ -57,7 +57,20 @@ def find_path(maze):
 
 # Path Printing Function
 def print_path(path, maze):
-    pass
+    for row in range(len(maze)):
+        for col in range(len(maze[0])):
+            if (row, col) == path[0]:
+                print(Fore.GREEN + 'S', end=" ")
+            elif (row, col) == path[-1]:
+                print(Fore.BLUE + 'E', end=" ")
+            elif (row, col) in path:
+                if row != 0 or col != 0:
+                    print(Fore.RED + 'X', end=" ")
+            elif maze[row][col] == Fore.RED + '▓':
+                print(Fore.RED + '▓', end=" ")
+            else:
+                print(Fore.BLUE + '◌', end=" ")
+        print()
 
 
 # Path Marking Function
